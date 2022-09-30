@@ -16,11 +16,16 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar!!.hide()
 
+        binding.editCreateAccount.setOnClickListener {
+            val openRegisterActivity = Intent(this, RegisterActivity::class.java)
+            startActivity(openRegisterActivity)
+        }
+
         binding.buttonLogin.setOnClickListener {
             if (validation()) {
-                val openRegister = Intent(this, RegisterActivity::class.java)
+                val openUserHomeActivity = Intent(this, UserHomeActivity::class.java)
 
-                startActivity(openRegister)
+                startActivity(openUserHomeActivity)
             }
         }
     }

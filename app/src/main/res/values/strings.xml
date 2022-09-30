@@ -9,4 +9,18 @@
     <string name="create_account">Create an Account</string>
     <string name="footer_label">Developed by DS2M</string>
     <string name="enter">Enter</string>
+    <string name="register">New account</string>
+    <string name="photo_label">Shall we choose a photo?</string>
+    <string name="data_label">Data for authentication</string>
+    <string name="label_person_data">Personal data</string>
+    <string name="game_level">What is your game level?</string>
+    <string name="level_selected">Casual</string>
+
+
+    <string-array name="consoles_array">
+        <item>Nintendo</item>
+        <item>Xbox</item>
+        <item>Playstation</item>
+        <item>PC</item>
+    </string-array>
 </resources>

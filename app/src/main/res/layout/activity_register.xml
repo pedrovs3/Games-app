@@ -20,8 +20,9 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/register"
             android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,6 +33,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,7 +55,7 @@
                 android:drawablePadding="5dp"
                 android:drawableTint="@color/main_color"
                 android:fontFamily="@font/roboto"
-                android:text="Vamos escolher uma foto?"
+                android:text="@string/photo_label"
                 android:textColor="@color/main_color"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -71,7 +73,7 @@
                 android:drawablePadding="5dp"
                 android:drawableTint="@color/main_color"
                 android:fontFamily="@font/roboto"
-                android:text="Dados para autenticaçao"
+                android:text="@string/data_label"
                 android:textColor="@color/main_color"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -88,7 +90,7 @@
                 android:drawablePadding="5dp"
                 android:drawableTint="@color/main_color"
                 android:fontFamily="@font/roboto"
-                android:text="Dados pessoais"
+                android:text="@string/label_person_data"
                 android:textColor="@color/main_color"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -100,8 +102,9 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
+                android:padding="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/textView8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -191,9 +194,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:drawablePadding="5dp"
                 android:fontFamily="@font/roboto"
-                android:text="What is your game level"
-                android:textColor="@color/main_color"
+                android:text="@string/game_level"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/slider"
@@ -215,7 +218,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/level_selected"
                 android:textColor="@color/main_color"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -229,15 +232,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Qual o seu console favorito?"
-                app:layout_constraintBottom_toTopOf="@+id/spinner"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerConsole"
                 app:layout_constraintStart_toStartOf="@+id/slider"
                 app:layout_constraintTop_toBottomOf="@+id/slider" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinnerConsole"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:entries="@array/consoles_array"
                 app:layout_constraintBottom_toTopOf="@+id/textView12"
                 app:layout_constraintEnd_toEndOf="@+id/slider"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -250,17 +256,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Sexo"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                app:layout_constraintStart_toStartOf="@+id/spinner"
-                app:layout_constraintTop_toBottomOf="@+id/spinner" />
+                app:layout_constraintStart_toStartOf="@+id/spinnerConsole"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerConsole" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/textView12">
 
@@ -278,7 +280,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="Feminino" />
-            </LinearLayout>
+
+            </RadioGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
