@@ -6,5 +6,6 @@
         android:title="savegame"
         android:icon="@drawable/ic_game_add"
         app:showAsAction="always"
+        app:iconTint="@color/background_color"
         />
 </menu>

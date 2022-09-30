@@ -7,6 +7,8 @@
         android:title="Save"
         app:showAsAction="always"
         android:icon="@drawable/ic_save"
+        app:iconTint="@color/background_color"
+
         />
 
     <item android:id="@+id/menu_settings"

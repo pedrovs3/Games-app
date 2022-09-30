@@ -17,7 +17,7 @@ class RegisterActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         supportActionBar?.title = "Register"
-
+        supportActionBar?.elevation = 0F
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

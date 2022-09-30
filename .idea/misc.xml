@@ -6,19 +6,13 @@
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/drawable/ic_button_background.xml" value="0.332" />
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/layout/activity_user_home.xml" value="0.275" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/menu/menu_new_user.xml" value="0.275" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/menu/menu_user_home.xml" value="0.275" />
         <entry key="app/src/main/res/drawable/above_wave.xml" value="0.4185" />
-        <entry key="app/src/main/res/drawable/game_level_bg.xml" value="0.1255" />
-        <entry key="app/src/main/res/drawable/header_home_bg.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_above_wave.xml" value="0.188" />
         <entry key="app/src/main/res/drawable/ic_edit_background.xml" value="0.4185" />
-        <entry key="app/src/main/res/drawable/ic_ellipse_5.xml" value="0.221" />
         <entry key="app/src/main/res/drawable/ic_line.xml" value="0.4185" />
-        <entry key="app/src/main/res/drawable/user_bg.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5192708333333333" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.5911458333333334" />
-        <entry key="app/src/main/res/layout/activity_user_home.xml" value="0.5" />
-        <entry key="app/src/main/res/menu/menu_new_user.xml" value="0.45" />
-        <entry key="app/src/main/res/menu/menu_user_home.xml" value="0.32037037037037036" />
       </map>
     </option>
   </component>
