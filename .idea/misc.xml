@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/drawable/ic_button_background.xml" value="0.332" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Games-app/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/above_wave.xml" value="0.4185" />
         <entry key="app/src/main/res/drawable/ic_edit_background.xml" value="0.4185" />
         <entry key="app/src/main/res/drawable/ic_line.xml" value="0.4185" />
