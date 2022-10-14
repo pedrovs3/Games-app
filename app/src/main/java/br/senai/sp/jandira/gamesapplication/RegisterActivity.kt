@@ -18,6 +18,26 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.title = "Register"
         supportActionBar?.elevation = 0F
+
+        binding.sliderLevel.addOnChangeListener { slider, value, fromUser ->
+        binding.textViewLevelLabel.text = gameLevel(value.toInt());
+        }
+    }
+
+    private fun gameLevel(value: Int): String? {
+        if (value == 1) {
+            return "Newbie"
+        }
+        if (value == 2) {
+            return "Casual"
+        }
+        if (value == 3) {
+            return "Hardcore Gamer"
+        }
+        if (value == 4) {
+            return ""
+        }
+        return "Yearner"
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -44,4 +64,6 @@ class RegisterActivity : AppCompatActivity() {
 
         return true
     }
+
+
 }

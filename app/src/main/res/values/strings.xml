@@ -14,8 +14,13 @@
     <string name="data_label">Data for authentication</string>
     <string name="label_person_data">Personal data</string>
     <string name="game_level">What is your game level?</string>
-    <string name="level_selected">Casual</string>
-
+    <string name="games_finished_label">Games Finished</string>
+    <string name="currently_playing">Currently Playing</string>
+    <string name="age_label">Age</string>
+    <string name="nivel_noob">Noob</string>
+    <string name="nivel_casual">Casual</string>
+    <string name="nivel_tryhard">Tryhard</string>
+    <string name="resgistered_games">Seus jogos cadastrados</string>
 
     <string-array name="consoles_array">
         <item>Nintendo</item>
