@@ -86,7 +86,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val user = User(
             0,
-//            null,
+            null,
             email,
             password,
             name,
