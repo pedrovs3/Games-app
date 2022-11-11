@@ -28,10 +28,10 @@ class GamesAdapter(val context: Context) : RecyclerView.Adapter<GamesAdapter.Hol
         val imagePt = view.findViewById<ImageView>(R.id.image_holder)
 
         fun bind(game: Game) {
-            produtoraPt.text = game.produtora
-            titlePt.text = game.nome
+            produtoraPt.text = game.estudio
+            titlePt.text = game.titulo
             descriptionPt.text = game.descricao
-            imagePt.setImageDrawable(game.imagem)
+//            imagePt.setImageDrawable(game.imagem)
         }
     }
 

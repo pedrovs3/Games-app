@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_edit_background.xml" value="0.4185" />
         <entry key="app/src/main/res/drawable/ic_line.xml" value="0.4185" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5192708333333333" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_user_home.xml" value="0.45" />
         <entry key="app/src/main/res/layout/holder_layout.xml" value="0.45" />
       </map>

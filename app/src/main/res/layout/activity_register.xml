@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".RegisterActivity">
+    tools:context=".ui.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
@@ -80,7 +80,7 @@
                 android:textColor="@color/main_color"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+                app:layout_constraintBottom_toTopOf="@+id/edit_email"
                 app:layout_constraintStart_toStartOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -97,9 +97,9 @@
                 android:textColor="@color/main_color"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+                app:layout_constraintBottom_toTopOf="@+id/edit_name"
+                app:layout_constraintStart_toStartOf="@+id/edit_password"
+                app:layout_constraintTop_toBottomOf="@+id/edit_password" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -126,7 +126,7 @@
                 app:tint="@color/main_color" />
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/edit_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -136,14 +136,14 @@
                 android:hint="@string/email_label"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+                app:layout_constraintBottom_toTopOf="@+id/edit_password"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/edit_password"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -153,13 +153,13 @@
                 android:inputType="textPassword"
                 android:minHeight="48dp"
                 app:layout_constraintBottom_toTopOf="@+id/textView9"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+                app:layout_constraintEnd_toEndOf="@+id/edit_email"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+                app:layout_constraintStart_toStartOf="@+id/edit_email"
+                app:layout_constraintTop_toBottomOf="@+id/edit_email" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/edit_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -168,14 +168,14 @@
                 android:hint="What is your name?"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+                app:layout_constraintBottom_toTopOf="@+id/edit_city"
+                app:layout_constraintEnd_toEndOf="@+id/edit_password"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <EditText
-                android:id="@+id/editTextTextPostalAddress"
+                android:id="@+id/edit_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -184,12 +184,12 @@
                 android:hint="What is your city?"
                 android:inputType="textPostalAddress"
                 android:minHeight="48dp"
-                app:layout_constraintBottom_toTopOf="@+id/editTextDate"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+                app:layout_constraintBottom_toTopOf="@+id/edit_birthdate"
+                app:layout_constraintStart_toStartOf="@+id/edit_name"
+                app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/edit_birthdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -199,8 +199,8 @@
                 android:inputType="date"
                 android:minHeight="48dp"
                 app:layout_constraintBottom_toTopOf="@+id/textView6"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPostalAddress"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+                app:layout_constraintStart_toStartOf="@+id/edit_city"
+                app:layout_constraintTop_toBottomOf="@+id/edit_city" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -213,8 +213,8 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/sliderLevel"
-                app:layout_constraintStart_toStartOf="@+id/editTextDate"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+                app:layout_constraintStart_toStartOf="@+id/edit_birthdate"
+                app:layout_constraintTop_toBottomOf="@+id/edit_birthdate" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/sliderLevel"
@@ -223,9 +223,9 @@
                 android:layout_marginTop="8dp"
                 android:stepSize="1"
                 android:valueFrom="1"
-                android:valueTo="27"
+                android:valueTo="5"
                 app:layout_constraintBottom_toTopOf="@+id/textView11"
-                app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+                app:layout_constraintEnd_toEndOf="@+id/edit_birthdate"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -239,7 +239,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/sliderLevel"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/edit_name"
                 app:layout_constraintTop_toTopOf="@+id/sliderLevel" />
 
             <TextView
@@ -278,6 +278,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/spinnerConsole" />
 
             <RadioGroup
+                android:id="@+id/radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

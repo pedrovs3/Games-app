@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.gamesapplication
+package br.senai.sp.jandira.gamesapplication.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

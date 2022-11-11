@@ -1,14 +1,21 @@
-package br.senai.sp.jandira.gamesapplication
+package br.senai.sp.jandira.gamesapplication.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import br.senai.sp.jandira.gamesapplication.R
 import br.senai.sp.jandira.gamesapplication.databinding.ActivityRegisterBinding
+import br.senai.sp.jandira.gamesapplication.models.Console
+import br.senai.sp.jandira.gamesapplication.models.NiveisEnum
+import br.senai.sp.jandira.gamesapplication.models.User
+import br.senai.sp.jandira.gamesapplication.repository.UserRepository
+import java.time.LocalDate
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
+    lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,23 +33,24 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun gameLevel(value: Int): String? {
         if (value == 1) {
-            return "Newbie"
+            return "Iniciante"
         }
         if (value == 2) {
-            return "Casual"
+            return "Básico"
         }
         if (value == 3) {
-            return "Hardcore Gamer"
+            return "Casual"
         }
         if (value == 4) {
-            return ""
+            return "Avançado"
         }
-        return "Yearner"
+        return "Iniciante"
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if(item.itemId == R.id.menu_save) {
+            var user = getFormData()
             Toast.makeText(this, "salvo", Toast.LENGTH_SHORT).show()
             return true
         } else if (item.itemId == R.id.menu_settings) {
@@ -54,6 +62,44 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         return true
+    }
+
+    private fun getFormData() {
+        val email = binding.editEmail.text.toString()
+        val password = binding.editPassword.text.toString()
+        val name = binding.editName.text.toString()
+        val city = binding.editCity.text.toString()
+        val birthdate = binding.editBirthdate.text.toString()
+
+        var nivel = NiveisEnum.INICIANTE
+        if (binding.sliderLevel.value.toInt() == 1) {
+            NiveisEnum.INICIANTE
+        } else if (binding.sliderLevel.value.toInt() == 2) {
+            NiveisEnum.BASICO
+        } else if (binding.sliderLevel.value.toInt() == 3) {
+            NiveisEnum.CASUAL
+        } else {
+            NiveisEnum.AVANCADO
+        }
+
+        val sexo = 'F'
+
+        val user = User(
+            0,
+//            null,
+            email,
+            password,
+            name,
+            city,
+            nivel,
+            sexo,
+            birthdate,
+            null
+        )
+
+        userRepository = UserRepository(this)
+        userRepository.save(user)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
