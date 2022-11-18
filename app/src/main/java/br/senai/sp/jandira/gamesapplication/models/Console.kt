@@ -6,11 +6,12 @@ import androidx.room.PrimaryKey
 import java.time.LocalDate
 
 @Entity(tableName = "tbl_console")
-data class Console(
-    @PrimaryKey(autoGenerate = true) var codigo:Int,
-    var nome:String,
+data class Console (
+    var nome_console:String,
     var fabricante :String,
     var descricao: String,
-    var foto:Bitmap? = null,
-    var anoLancamento:Int
-)
+//    var foto:Bitmap? = null,
+    var anoLancamento:Int? = null
+) {
+    @PrimaryKey(autoGenerate = true) var id_console: Int = 0
+}

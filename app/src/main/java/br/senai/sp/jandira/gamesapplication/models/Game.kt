@@ -7,11 +7,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tbl_game")
 data class Game (
-    @PrimaryKey(autoGenerate = true) var id:Int,
     var titulo:String,
     var descricao:String,
     var estudio:String,
     var anoLancamento:Int,
     var finalizado:Boolean,
-    var imagem :Bitmap?
-    )
+//    var imagem :Bitmap?
+    ) {
+    @PrimaryKey(autoGenerate = true) var id:Int = 0
+}

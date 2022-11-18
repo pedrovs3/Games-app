@@ -51,6 +51,7 @@ class RegisterActivity : AppCompatActivity() {
 
         if(item.itemId == R.id.menu_save) {
             var user = getFormData()
+
             Toast.makeText(this, "salvo", Toast.LENGTH_SHORT).show()
             return true
         } else if (item.itemId == R.id.menu_settings) {
@@ -85,8 +86,6 @@ class RegisterActivity : AppCompatActivity() {
         val sexo = 'F'
 
         val user = User(
-            0,
-            null,
             email,
             password,
             name,
@@ -99,7 +98,6 @@ class RegisterActivity : AppCompatActivity() {
 
         userRepository = UserRepository(this)
         userRepository.save(user)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
