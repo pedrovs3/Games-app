@@ -10,7 +10,7 @@ data class Console (
     var nome_console:String,
     var fabricante :String,
     var descricao: String,
-//    var foto:Bitmap? = null,
+    var console_foto:ByteArray? = null,
     var anoLancamento:Int? = null
 ) {
     @PrimaryKey(autoGenerate = true) var id_console: Int = 0

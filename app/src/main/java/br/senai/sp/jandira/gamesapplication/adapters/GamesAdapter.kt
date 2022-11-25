@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import br.senai.sp.jandira.gamesapplication.R
 import br.senai.sp.jandira.gamesapplication.databinding.HolderLayoutBinding
@@ -31,7 +32,7 @@ class GamesAdapter(val context: Context) : RecyclerView.Adapter<GamesAdapter.Hol
             produtoraPt.text = game.estudio
             titlePt.text = game.titulo
             descriptionPt.text = game.descricao
-//            imagePt.setImageDrawable(game.imagem)
+            imagePt.setImageDrawable(R.drawable.street_fighter.toDrawable())
         }
     }
 

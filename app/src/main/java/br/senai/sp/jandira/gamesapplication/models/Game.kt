@@ -12,7 +12,8 @@ data class Game (
     var estudio:String,
     var anoLancamento:Int,
     var finalizado:Boolean,
-//    var imagem :Bitmap?
+    var created_by: Int,
+    var imagem :ByteArray?
     ) {
-    @PrimaryKey(autoGenerate = true) var id:Int = 0
+    @PrimaryKey(autoGenerate = true) var game_id:Int = 0
 }
