@@ -30,6 +30,7 @@ class GameRegisterActivity : AppCompatActivity() {
 
         val user_id = intent.getIntExtra("user_id", 0)
         user = UserRepository(this).getUserById(user_id)
+
     }
 
     private fun getFormData(): Game {
@@ -37,10 +38,12 @@ class GameRegisterActivity : AppCompatActivity() {
         val nomeJogo = binding.editNomeJogo.text.toString()
         val description = binding.editDescription.text.toString()
         val launch_year = binding.editYear.text.toString().toInt()
+
+        var finished = false
         if(binding.gameFinalized.isChecked) {
-            val finished = true
+            finished = true
         }
-        val finished = false
+
         val created_by = user.user_id
 
         val game = Game(nomeJogo,

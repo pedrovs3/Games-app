@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(openRegisterActivity)
         }
 
+        binding.rememberMe.setOnClickListener {
+
+        }
+
         binding.buttonLogin.setOnClickListener {
             val user = userRepository.getUserByEmail(binding.editEmail.text.toString())
 
@@ -59,10 +63,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         if(user === null) {
-            Toast.makeText(this, "Email ou senha incorreto.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Email ou senha incorreto. $user", Toast.LENGTH_SHORT).show()
             return false
         } else if (user.senha != binding.editPassword.text.toString()) {
-            Toast.makeText(this, "Email ou senha incorreto.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Email ou senha incorreto.  $user", Toast.LENGTH_SHORT).show()
             return false
         }
 

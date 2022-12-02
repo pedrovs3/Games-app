@@ -4,17 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
 import br.senai.sp.jandira.gamesapplication.R
 import br.senai.sp.jandira.gamesapplication.databinding.ActivityRegisterBinding
+import br.senai.sp.jandira.gamesapplication.models.Console
 import br.senai.sp.jandira.gamesapplication.models.enums.NiveisEnum
 import br.senai.sp.jandira.gamesapplication.models.User
+import br.senai.sp.jandira.gamesapplication.repository.ConsoleRepository
 import br.senai.sp.jandira.gamesapplication.repository.UserRepository
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
     lateinit var userRepository: UserRepository
+    lateinit var consoleRepository : ConsoleRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +30,11 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.elevation = 0F
 
         userRepository = UserRepository(this)
+        consoleRepository = ConsoleRepository(this)
 
-        val binding.spinnerConsole
+        val arraySpinner =  consoleRepository.getAll().map { game -> game.nome_console }
+        val arrayAdapter = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, arraySpinner)
+        binding.spinnerConsole.adapter = arrayAdapter
 
         binding.sliderLevel.addOnChangeListener { slider, value, fromUser ->
             binding.textViewLevelLabel.text = gameLevel(value.toInt())!!.nivel
@@ -56,6 +63,7 @@ class RegisterActivity : AppCompatActivity() {
             val id = userRepository.save(user)
 
             Toast.makeText(this, "salvo, id: ${id}", Toast.LENGTH_SHORT).show()
+            finish()
             return true
         }
 

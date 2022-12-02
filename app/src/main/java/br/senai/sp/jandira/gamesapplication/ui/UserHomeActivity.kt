@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,7 @@ import br.senai.sp.jandira.gamesapplication.databinding.ActivityUserHomeBinding
 import br.senai.sp.jandira.gamesapplication.models.User
 import br.senai.sp.jandira.gamesapplication.repository.ConsoleRepository
 import br.senai.sp.jandira.gamesapplication.repository.UserRepository
+import java.util.*
 
 class UserHomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserHomeBinding
@@ -54,6 +56,21 @@ class UserHomeActivity : AppCompatActivity() {
         binding.editNameUser.setText(user.nome)
         binding.editEmailUser.setText(user.email)
         binding.editGameLevel.setText(user.nivel.nivel)
+        binding.textAge.setText((Calendar.getInstance().get(Calendar.YEAR).toInt() - user.dataNascimento.split("/").last().toInt()).toString());
+        var countFinalizado = 0
+        var countPlaying = 0
+
+        userRepository.getUserGamesById(user.user_id)[0].games.forEach {
+            if (it.finalizado) {
+                countFinalizado += 1
+            } else {
+                countPlaying += 1
+            }
+        }
+
+        Toast.makeText(this, "${userRepository.getUserGamesById(user.user_id)[0].games}", Toast.LENGTH_SHORT).show()
+        binding.textGamesFinished.setText(countFinalizado.toString())
+        binding.textGamesPlaying.setText(countPlaying.toString())
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -78,6 +95,7 @@ class UserHomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        getDataFromUser(user)
         adapterGames.updateGamesList(userRepository.getUserGamesById(user.user_id)[0].games)
     }
 }
